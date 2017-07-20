@@ -3,11 +3,11 @@ import React from 'react'
 //const VideoListItem = (props) => {
 //const video = props.video
 //esas dos lineas las podemos hacer una si le agregamos {} al parametro props y le ponemos direactamente la propiedad
-const VideoListItem = ({video}) => {
+const VideoListItem = ({video, onVideoSelect}) => {
   const imageUrl = video.snippet.thumbnails.default.url
   //console.log(video)
   return (
-    <li className="list-group-item">
+    <li onClick={() => onVideoSelect(video)} className="list-group-item">
       <div className="video-list media">
         <div className="media-left">
           <img className="media-object" src={imageUrl} />
@@ -18,6 +18,6 @@ const VideoListItem = ({video}) => {
       </div>
     </li>
   )
-}
+};
 
-export default VideoListItem
+export default VideoListItem;
